@@ -1,0 +1,247 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Diseño para el perfil en el aside */
+.aside-profile {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.aside-profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.aside-info h4 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.aside-info h5 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.aside-info span {
+    font-size: 0.9rem;
+    color: green;
+    font-weight: bold;
+}
+
+/* Estilo para el contenido principal */
+.main-content {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+}
+
+/* Menú de navegación */
+.nav-bar {
+    margin-bottom: 20px;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: #d1e7f3; /* Celeste suave */
+    border-radius: 8px;
+}
+
+.nav-bar a {
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+    background-color: #8cc7de; /* Celeste más oscuro */
+}
+
+/* Estilos para las secciones de contenido */
+.content-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block;
+    opacity: 1;
+    text-align: justify;
+    margin-right: 20px; /* Mover el contenido hacia la derecha */
+}
+
+/* Bloques de contenido */
+.wrapper {
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 5px solid #8cc7de; /* Celeste suave */
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+.signature {
+    margin-top: 15px;
+    max-width: 150px;
+}
+
+/* Botones de contacto */
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.buttons-contact button {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.buttons-contact button:hover {
+    background-color: #128C7E;
+}
+
+.buttons-contact i {
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .personal-data {
+    flex: 1 1 45%;
+    margin-bottom: 10px;
+}
+
+footer b {
+    color: #333;
+}
+
+/* Galería de imágenes */
+.slides img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.slides img.active {
+    display: block;
+}
+
+/* Flechas de navegación */
+.gallery-nav {
+    position: relative;
+    text-align: center;
+}
+
+.gallery-nav span {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.gallery-nav span:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+    }
+
+    .aside-profile, .main-content {
+        width: 100%;
+    }
+
+    .buttons-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons-contact {
+        margin-bottom: 15px;
+    }
+
+    /* Ajuste para la galería en pantallas táctiles */
+    .slides img {
+        width: 100%;
+    }
+
+    .gallery-nav span {
+        font-size: 1.5rem;
+    }
+}
